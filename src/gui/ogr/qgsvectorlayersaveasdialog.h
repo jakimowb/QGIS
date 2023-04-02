@@ -21,11 +21,11 @@
 #include "ui_qgsvectorlayersaveasdialogbase.h"
 #include <QDialog>
 #include "qgsvectorfilewriter.h"
+#include "qgis_sip.h"
 #include "qgis_gui.h"
 
-#define SIP_NO_FILE
-
 class QgsVectorLayer;
+
 
 /**
  * \ingroup gui
@@ -226,6 +226,10 @@ class GUI_EXPORT QgsVectorLayerSaveAsDialog : public QDialog, private Ui::QgsVec
     //! Returns creation action
     QgsVectorFileWriter::ActionOnExistingFile creationActionOnExistingFile() const;
 
+
+  protected:
+    void accept() override;
+
   private slots:
 
     void mFormatComboBox_currentIndexChanged( int idx );
@@ -233,7 +237,7 @@ class GUI_EXPORT QgsVectorLayerSaveAsDialog : public QDialog, private Ui::QgsVec
     void showHelp();
     void mSymbologyExportComboBox_currentIndexChanged( const QString &text );
     void mGeometryTypeComboBox_currentIndexChanged( int index );
-    void accept() override;
+
     void mSelectAllAttributes_clicked();
     void mDeselectAllAttributes_clicked();
     void mUseAliasesForExportedName_stateChanged( int state );
