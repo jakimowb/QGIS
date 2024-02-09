@@ -755,6 +755,8 @@ QgsExpressionContextScope *QgsExpressionContextUtils::layoutItemScope( const Qgs
   scope->addVariable( QgsExpressionContextScope::StaticVariable( QStringLiteral( "item_id" ), item->id(), true ) );
   scope->addVariable( QgsExpressionContextScope::StaticVariable( QStringLiteral( "item_uuid" ), item->uuid(), true ) );
   scope->addVariable( QgsExpressionContextScope::StaticVariable( QStringLiteral( "layout_page" ), item->page() + 1, true ) );
+  scope->addVariable( QgsExpressionContextScope::StaticVariable( QStringLiteral( "item_width" ), item->sizeWithUnits().width(), true ) );
+  scope->addVariable( QgsExpressionContextScope::StaticVariable( QStringLiteral( "item_height" ), item->sizeWithUnits().width(), true ) );
 
   if ( item->layout() )
   {
