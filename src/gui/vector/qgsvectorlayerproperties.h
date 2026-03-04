@@ -103,7 +103,7 @@ class GUI_EXPORT QgsVectorLayerProperties : public QgsLayerPropertiesDialog, pri
 
   signals:
 
-    void toggleEditing( QgsMapLayer * ) SIP_SKIP;
+    void toggleEditing( QgsMapLayer * );
 
     void exportAuxiliaryLayer( QgsAuxiliaryLayer *layer ) SIP_SKIP;
 
